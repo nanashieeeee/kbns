@@ -1,0 +1,119 @@
+.hero-container {
+  position: relative;
+  display: inline-block;
+}
+
+.heroTitle {
+  font-size: 96px;
+  background-image: linear-gradient(#F3EBFF 24%, #B181FF 69%);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 2;
+}
+.heroTitleShadow {
+  font-size: 96px;
+  color: black;
+  text-shadow: 5px 6px 10px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.heroBtn{
+  width: 75%;
+  padding: .5rem;
+  font-size: 20px;
+  background-color: #D891EF;
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 2px 3px 5px black;
+  transition: all 0.5s ease;
+}
+
+.heroBtn:hover{
+  transform: scale(1.05);
+}
+
+.heroImgContainer{
+  position: relative;
+  display: inline-block;
+}
+
+@keyframes animateImg2 {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(300px);
+    opacity: 1;
+  }
+}
+
+@keyframes animateImg1 {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(-240px);
+    opacity: 1;
+  }
+}
+
+.heroImg1{
+  height: 360px;
+  width: 270px;
+  position: relative;
+  z-index: 2;
+  top: 340px;
+  left: 50%;
+  background-image: url(../assets/karinahero.png);
+  background-size: cover;
+  border-radius: 15px;
+  border: 3px solid aliceblue;
+  box-shadow: 3px 5px 10px black;
+  animation-name: animateImg1;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.heroImg2{
+  height: 360px;
+  width: 270px;
+  position: absolute;
+  z-index: 1;
+  bottom: 340px ;
+  right:10% ;
+  border-radius: 15px;
+  border: 3px solid aliceblue;
+  box-shadow: 3px 5px 10px black;
+  background-color: #D891EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: animateImg2;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@media(max-width: 576px){
+  .heroTitle {
+    font-size: 72px;
+  }
+  .heroTitleShadow {
+    font-size: 72px;
+  }
+  .heroStatements{
+    padding: 25px ;
+  }
+  .heroStatementFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .heroStatementFooter p{
+    font-size: 14px;
+  }
+}

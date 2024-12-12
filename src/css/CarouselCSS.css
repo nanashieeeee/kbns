@@ -1,0 +1,138 @@
+.lighstStickCarousel{
+  position: relative;
+  height: 500px;
+  padding: 50px;
+}
+.lighstStickCarousel:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/lightstick_ocean2.jpg);
+  background-size: cover;
+  background-position: 50% 70%;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+#light{
+  color: aliceblue;
+  font-size: 256px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 10px;
+}
+@keyframes lightAnimation {
+  0%{
+
+  }
+  50%{
+    filter: drop-shadow(0px 0px 25px #7E70E3);
+  }
+  100%{
+
+  }
+}
+#light img{
+  height: 256px;
+  object-fit: contain;
+  position: relative;
+  top: -50px;
+  animation-name: lightAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+#sticks{
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 72px;
+  letter-spacing: 100px;
+  margin: 0;
+  margin-left: 7%;
+}
+
+/*************************************/
+
+.photoCardCarousel{
+  position: relative;
+  height: 500px;
+  padding: 50px;
+}
+.photoCardCarousel:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/pc_bg.jpg);
+  background-size: cover;
+  background-position: 50% 70%;
+  filter: blur(5px);
+  z-index: -1;
+}
+@keyframes flipPhotoCard {
+  0%{
+
+  }
+  50%{
+    transform: rotateY(180deg);
+  }
+  100%{
+
+  }
+}
+
+.card-container {
+  width: 220px;
+  height: 320px;
+  border-radius: 10px;
+}
+.photo-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  border-radius: 10px;
+  border: 2px solid aliceblue;
+  box-shadow: 3px 3px 5px aliceblue;
+  animation-name: flipPhotoCard;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+.photo-card:hover {
+  transform: rotateY(180deg);
+}
+.photo-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.photo-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+} 
+
+/*************************************/

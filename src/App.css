@@ -1,0 +1,14 @@
+.navbar a {
+  text-decoration: none;
+  color: #f5d4ff;
+}
+.navbar a:hover {
+  color: aliceblue;
+}
+.navbar {
+  background-color: #660066;
+  padding: 1.5rem;
+}
+
+
+
