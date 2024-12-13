@@ -24,7 +24,9 @@
   width: 75%;
   padding: .5rem;
   font-size: 20px;
-  background-color: #D891EF;
+  background: linear-gradient(45deg, #6D33B4,#D891EF,#9CC9DD);
+  background-size: 300% 300%;
+  animation: animateHeroBtn 7s ease-in-out infinite;
   color: #FFFFFF;
   border: none;
   box-shadow: 2px 3px 5px black;
@@ -33,6 +35,18 @@
 
 .heroBtn:hover{
   transform: scale(1.05);
+}
+
+@keyframes animateHeroBtn {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
 }
 
 .heroImgContainer{

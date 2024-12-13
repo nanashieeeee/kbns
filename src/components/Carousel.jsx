@@ -2,6 +2,7 @@ import React from "react";
 import "../css/CarouselCSS.css";
 import CarouselItem from "./CarouselItem";
 import PhotoCard from "./PhotoCard";
+import CarouselDesc from "./CarouselDesc";
 import images from "./Images";
 
 function Carousel() {
@@ -11,47 +12,84 @@ function Carousel() {
         {/* carousel content */}
         <div className="carousel-inner">
           {/* lightstick carousel */}
-          <CarouselItem identifier="lighstStickCarousel" active={true}>
-            <div className="d-flex flex-column align-items-center">
-              <h1 id="light">
-                L
-                <img src={images.maveLightstick} alt="" />
-                GHT
-              </h1>
-              <h1 id="sticks">STICKS</h1>
+          <CarouselItem identifier="lighstStickCarousel">
+            <div className="row">
+              <div className="col-6">
+                <div className="banner">
+                  <div className="lightstick-container">
+                    <div className="lightstick"></div>
+                  </div>
+                  <div className="hexagon-platform">
+                    <img src={images.platformHexa} alt="" />
+                  </div>
+                </div>
+              </div>
+              <CarouselDesc
+                h1="LIGHTSTICKS"
+                h2="Elevate Your Concert Experience"
+                p="Wide variety of choices. From fan-made to official releases."
+              />
             </div>
           </CarouselItem>
           {/* Photocards Carousel */}
           <CarouselItem identifier="photoCardCarousel">
-            <h1
-              style={{
-                fontSize: "64px",
-                color: "aliceblue",
-                letterSpacing: "62px",
-                fontWeight: "bold",
-                margin: '0',
-                padding: '0',
-              }}
+            <div className="row">
+              <div className="col-6">
+                <div className="banner">
+                  <div className="photoCard-container">
+                    <div className="photoCard">
+                      <PhotoCard
+                        frontImgUrl={images.soyeonBackImg}
+                        backImgUrl={images.soyeon}
+                      ></PhotoCard>
+                    </div>
+                  </div>
+                  <div className="circle-platform">
+                    <img src={images.platformCircle} alt="" />
+                  </div>
+                </div>
+              </div>
+              <CarouselDesc
+                h1="PHOTO CARDS"
+                h2="Exclusive Collectibles for Every Fan"
+                p="Discover unique designs featuring your favorite idols. Perfect for trading, collecting, and sharing the love of K-pop."
+              />
+            </div>
+          </CarouselItem>
+          {/* Album Carousel */}
+          <CarouselItem identifier="albumCarousel">
+            <div className="row">
+              <div className="col-6">
+                <div className="banner">
+                  <div className="disc-container">
+                    <div className="disc"></div>
+                  </div>
+                  <div className="vinyl-player">
+                    <img src={images.vinylPlayer} alt="" />
+                  </div>
+                </div>
+              </div>
+              <CarouselDesc
+                h1="ALBUMS"
+                h2="Own the Music, Celebrate the Art"
+                p="From chart-topping hits to exclusive photobooks, experience
+                  your favorite artists masterpieces in physical form."
+              />
+            </div>
+          </CarouselItem>
+          {/* Last Carousel */}
+          <CarouselItem identifier="lastCarousel" active={true}>
+            <div
+              className="d-flex flex-column justify-content-center align-items-center"
+              style={{ height: "400px" }}
             >
-              PHOTOCARDS
-            </h1>
-            <div className="d-flex justify-content-center align-items-center pt-2">
-              <PhotoCard
-                frontImgUrl={images.soyeon}
-                backImgUrl={images.soyeonBackImg}
-              ></PhotoCard>
-              <PhotoCard
-                frontImgUrl={images.lisa}
-                backImgUrl={images.lisaBackImg}
-              ></PhotoCard>
-              <PhotoCard
-                frontImgUrl={images.seulgi}
-                backImgUrl={images.seulgiBackImg}
-              ></PhotoCard>
-              <PhotoCard
-                frontImgUrl={images.hanni}
-                backImgUrl={images.hanniBackImg}
-              ></PhotoCard>
+              <h1 className="display-1 fw-bold w-50 text-center">
+                AND SO MUCH MORE!
+              </h1>
+              <h2 className="fw-bold mt-5">
+                Get into the hobby, <a href="" style={{color: '#B181FF'}}>Sign up</a> now to start
+                browsing.
+              </h2>
             </div>
           </CarouselItem>
         </div>

@@ -3,7 +3,7 @@ import React from "react";
 
 function PhotoCard(props) {
   return (
-    <div className="card-container me-5">
+    <div className="card-container">
       <div className="photo-card">
         <div
           className="photo-card-front"

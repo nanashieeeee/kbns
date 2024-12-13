@@ -1,10 +1,11 @@
-.lighstStickCarousel{
+.lighstStickCarousel {
   position: relative;
   height: 500px;
   padding: 50px;
+  color: aliceblue;
 }
-.lighstStickCarousel:before{
-  content: '';
+.lighstStickCarousel:before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -17,55 +18,74 @@
   z-index: -1;
 }
 
-#light{
-  color: aliceblue;
-  font-size: 256px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  gap: 10px;
+.banner .lightstick-container {
+  width: 135px;
+  height: 320px;
+  position: absolute;
+  bottom: 83px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: 0.7s;
 }
-@keyframes lightAnimation {
-  0%{
+.banner .lightstick-container .lightstick {
+  background: url(../assets/mave_lightstick.png);
+  background-size: auto 100%;
+  width: 100%;
+  height: 100%; 
+  
+  animation: glowLightstick 2s ease;
+  animation-iteration-count: infinite;
+  
+}
+.banner .lightstick-container:hover {
+  transform: translateX(-50%) translateY(-5%);
+}
 
+
+@keyframes glowLightstick {
+  0% {
+    /* transform: rotate(0deg); */
   }
-  50%{
-    filter: drop-shadow(0px 0px 25px #7E70E3);
+  50% {
+    filter: drop-shadow(0px 0px 10px #f8a8c5);
   }
   100%{
 
   }
 }
-#light img{
-  height: 256px;
-  object-fit: contain;
-  position: relative;
-  top: -50px;
-  animation-name: lightAnimation;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+
+.banner .hexagon-platform {
+  position: absolute;
+  inset: 0 0 0 0;
+  pointer-events: none;
 }
-#sticks{
-  color: aliceblue;
-  font-weight: bold;
-  font-size: 72px;
-  letter-spacing: 100px;
-  margin: 0;
-  margin-left: 7%;
+.banner .hexagon-platform img {
+  position: absolute;
+  transition: 0.7s;
+  height: 300px;
+  width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -200px;
 }
+.banner:has(.lightstick-container:hover) .hexagon-platform img {
+  transform: translateX(-50%) translateY(50px);
+}
+
+
 
 /*************************************/
-
-.photoCardCarousel{
+/************PHOTOCARDS***************/
+/*************************************/
+.photoCardCarousel {
   position: relative;
   height: 500px;
   padding: 50px;
+  color: aliceblue;
 }
-.photoCardCarousel:before{
-  content: '';
+.photoCardCarousel:before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -77,18 +97,57 @@
   filter: blur(5px);
   z-index: -1;
 }
-@keyframes flipPhotoCard {
-  0%{
 
-  }
-  50%{
-    transform: rotateY(180deg);
-  }
-  100%{
-
-  }
+.banner .photoCard-container {
+  width: 220px;
+  height: 320px;
+  position: absolute;
+  bottom: 83px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: 0.7s;
+}
+.banner .photoCard-container .photoCard {
+  width: 100%;
+  height: 100%;  
+  
+  
+}
+.banner .photoCard-container:hover {
+  transform: translateX(-50%) translateY(-5%);
 }
 
+.banner .circle-platform {
+  position: absolute;
+  inset: 0 0 0 0;
+  pointer-events: none;
+}
+.banner .circle-platform img {
+  position: absolute;
+  transition: 0.7s;
+  height: 300px;
+  width: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -200px;
+}
+.banner:has(.photoCard-container:hover) .circle-platform img {
+  transform: translateX(-50%) translateY(50px);
+}
+
+
+
+
+@keyframes flipPhotoCard {
+  0% {
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+  }
+}
 .card-container {
   width: 220px;
   height: 320px;
@@ -100,8 +159,8 @@
   transform-style: preserve-3d;
   transition: all 0.5s ease-in-out;
   border-radius: 10px;
-  border: 2px solid aliceblue;
-  box-shadow: 3px 3px 5px aliceblue;
+  border: 1px solid aliceblue;
+  box-shadow: 0px 0px 15px aliceblue;
   animation-name: flipPhotoCard;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
@@ -133,6 +192,141 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-} 
+}
 
 /*************************************/
+/****************ALBUM****************/
+/*************************************/
+
+.albumCarousel {
+  position: relative;
+  height: 500px;
+  padding: 50px;
+  overflow: hidden;
+  color: aliceblue;
+}
+.albumCarousel:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/album_bg.jpg);
+  background-size: cover;
+  background-position: 50% 70%;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.albumsHeader {
+  font-size: 63px;
+  color: aliceblue;
+  letter-spacing: 60px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50px;
+}
+.albumsHeader::after {
+  content: " ";
+  margin-left: -60px;
+}
+
+.banner {
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .disc-container {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: 0.7s;
+}
+.banner .disc-container .disc {
+  background: url(../assets/album.jpg), url(../assets/disc_concept.png);
+  background-size: auto 100%;
+  width: 250px;
+  aspect-ratio: 1/1;
+  background-blend-mode: multiply;
+  mask-image: url(../assets/disc_concept.png);
+  animation: rotateDisc 2s ease;
+  
+}
+.banner .disc-container:hover {
+  transform: translateX(-50%) translateY(-20%);
+}
+
+.banner .disc-container:hover .disc {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+@keyframes rotateDisc {
+  0% {
+    /* transform: rotate(0deg); */
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.banner .vinyl-player {
+  position: absolute;
+  inset: 0 0 0 0;
+  pointer-events: none;
+  filter: drop-shadow(0px 0px 10px #f8a8c5);
+}
+.banner .vinyl-player img {
+  position: absolute;
+  transition: 0.7s;
+  height: 300px;
+  width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -80px;
+}
+.banner:has(.disc-container:hover) .vinyl-player img {
+  transform: translateX(-50%) translateY(50px);
+}
+
+.disc-small {
+  border-radius: 100px;
+  aspect-ratio: 1/1;
+  width: 150px;
+  background-size: contain;
+  mask-image: url(../assets/disc_concept_small.png);
+  filter: drop-shadow(0px 0px 150px #f8a8c5);
+}
+
+/*************************************/
+/************LAST CAROUSEL************/
+/*************************************/
+
+.lastCarousel {
+  position: relative;
+  height: 500px;
+  padding: 50px;
+  overflow: hidden;
+  color: aliceblue;
+}
+.lastCarousel:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/last_carouselBG.jpg);
+  background-size: cover;
+  background-position: 50% 70%;
+  filter: blur(5px);
+  z-index: -1;
+}
