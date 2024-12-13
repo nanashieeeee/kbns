@@ -9,8 +9,30 @@ function Carousel() {
   return (
     <div className="carouselContainer container-fluid p-0 mt-5">
       <div id="productCarousel" className="carousel slide">
+
         {/* carousel content */}
         <div className="carousel-inner">
+          {/* Album Carousel */}
+          <CarouselItem identifier="albumCarousel" active={true}>
+            <div className="row">
+              <div className="col-6">
+                <div className="banner">
+                  <div className="disc-container">
+                    <div className="disc"></div>
+                  </div>
+                  <div className="vinyl-player">
+                    <img src={images.vinylPlayer} alt="" />
+                  </div>
+                </div>
+              </div>
+              <CarouselDesc
+                h1="ALBUMS"
+                h2="Own the Music, Celebrate the Art"
+                p="From chart-topping hits to exclusive photobooks, experience
+                  your favorite artists masterpieces in physical form."
+              />
+            </div>
+          </CarouselItem>
           {/* lightstick carousel */}
           <CarouselItem identifier="lighstStickCarousel">
             <div className="row">
@@ -56,29 +78,9 @@ function Carousel() {
               />
             </div>
           </CarouselItem>
-          {/* Album Carousel */}
-          <CarouselItem identifier="albumCarousel">
-            <div className="row">
-              <div className="col-6">
-                <div className="banner">
-                  <div className="disc-container">
-                    <div className="disc"></div>
-                  </div>
-                  <div className="vinyl-player">
-                    <img src={images.vinylPlayer} alt="" />
-                  </div>
-                </div>
-              </div>
-              <CarouselDesc
-                h1="ALBUMS"
-                h2="Own the Music, Celebrate the Art"
-                p="From chart-topping hits to exclusive photobooks, experience
-                  your favorite artists masterpieces in physical form."
-              />
-            </div>
-          </CarouselItem>
+          
           {/* Last Carousel */}
-          <CarouselItem identifier="lastCarousel" active={true}>
+          <CarouselItem identifier="lastCarousel" >
             <div
               className="d-flex flex-column justify-content-center align-items-center"
               style={{ height: "400px" }}
