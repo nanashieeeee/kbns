@@ -2,7 +2,7 @@ import React from "react";
 
 function Header(){
   return(
-    <nav className="navbar">
+    <nav className="navbar fixed-top">
       <div className="container d-flex justify-content-between align-items-center">
         <h2 className="fw-bold text-light">kBN'S</h2>
         <div className="d-flex">

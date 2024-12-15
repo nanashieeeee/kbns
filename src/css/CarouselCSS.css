@@ -1,28 +1,26 @@
-.lighstStickCarousel {
-  position: relative;
-  height: 500px;
-  padding: 50px;
+.labelBtn {
   color: aliceblue;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.7s ease;
 }
-.lighstStickCarousel:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../assets/lightstick_ocean2.jpg);
-  background-size: cover;
-  background-position: 50% 70%;
-  filter: blur(5px);
-  z-index: -1;
+.labelBtn:hover {
+  transform: scale(1.05);
+}
+
+.banner {
+  height: 500px;
+  width: 400px;
+  position: relative;
 }
 
 .banner .lightstick-container {
-  width: 135px;
-  height: 320px;
+  width: 180px;
+  height: 420px;
   position: absolute;
-  bottom: 83px;
+  bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -32,77 +30,48 @@
   background: url(../assets/mave_lightstick.png);
   background-size: auto 100%;
   width: 100%;
-  height: 100%; 
-  
-  animation: glowLightstick 2s ease;
-  animation-iteration-count: infinite;
-  
+  height: 100%;
+  animation: glowLightstick 2s ease infinite;
 }
 .banner .lightstick-container:hover {
   transform: translateX(-50%) translateY(-5%);
 }
 
-
 @keyframes glowLightstick {
   0% {
-    /* transform: rotate(0deg); */
   }
   50% {
-    filter: drop-shadow(0px 0px 10px #f8a8c5);
+    filter: drop-shadow(0px 0px 25px #f8a8c5);
   }
-  100%{
-
+  100% {
   }
 }
 
-.banner .hexagon-platform {
+.banner .platform-circle {
   position: absolute;
   inset: 0 0 0 0;
   pointer-events: none;
 }
-.banner .hexagon-platform img {
+.banner .platform-circle img {
   position: absolute;
   transition: 0.7s;
-  height: 300px;
-  width: 250px;
+  height: 150px;
+  width: 400px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -200px;
+  bottom: -50px;
 }
-.banner:has(.lightstick-container:hover) .hexagon-platform img {
+.banner:has(.lightstick-container:hover) .platform-circle img {
   transform: translateX(-50%) translateY(50px);
 }
-
-
-
 /*************************************/
 /************PHOTOCARDS***************/
 /*************************************/
-.photoCardCarousel {
-  position: relative;
-  height: 500px;
-  padding: 50px;
-  color: aliceblue;
-}
-.photoCardCarousel:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../assets/pc_bg.jpg);
-  background-size: cover;
-  background-position: 50% 70%;
-  filter: blur(5px);
-  z-index: -1;
-}
-
 .banner .photoCard-container {
-  width: 220px;
-  height: 320px;
+  width: 300px;
+  height: 420px;
   position: absolute;
-  bottom: 83px;
+  bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -110,35 +79,14 @@
 }
 .banner .photoCard-container .photoCard {
   width: 100%;
-  height: 100%;  
-  
-  
+  height: 100%;
 }
 .banner .photoCard-container:hover {
-  transform: translateX(-50%) translateY(-5%);
+  transform: translateX(-50%) translateY(-20%);
 }
-
-.banner .circle-platform {
-  position: absolute;
-  inset: 0 0 0 0;
-  pointer-events: none;
-}
-.banner .circle-platform img {
-  position: absolute;
-  transition: 0.7s;
-  height: 300px;
-  width: 300px;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -200px;
-}
-.banner:has(.photoCard-container:hover) .circle-platform img {
+.banner:has(.photoCard-container:hover) .platform-circle img {
   transform: translateX(-50%) translateY(50px);
 }
-
-
-
-
 @keyframes flipPhotoCard {
   0% {
   }
@@ -149,8 +97,8 @@
   }
 }
 .card-container {
-  width: 220px;
-  height: 320px;
+  width: 300px;
+  height: 420px;
   border-radius: 10px;
 }
 .photo-card {
@@ -160,10 +108,8 @@
   transition: all 0.5s ease-in-out;
   border-radius: 10px;
   border: 1px solid aliceblue;
-  box-shadow: 0px 0px 15px aliceblue;
-  animation-name: flipPhotoCard;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
+  box-shadow: 0px 0px 10px aliceblue;
+  animation: flipPhotoCard 2s ease-in-out;
 }
 .photo-card:hover {
   transform: rotateY(180deg);
@@ -193,58 +139,14 @@
   justify-content: center;
   border-radius: 10px;
 }
-
 /*************************************/
 /****************ALBUM****************/
 /*************************************/
-
-.albumCarousel {
-  position: relative;
-  height: 500px;
-  padding: 50px;
-  overflow: hidden;
-  color: aliceblue;
-}
-.albumCarousel:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../assets/album_bg.jpg);
-  background-size: cover;
-  background-position: 50% 70%;
-  filter: blur(5px);
-  z-index: -1;
-}
-
-.albumsHeader {
-  font-size: 63px;
-  color: aliceblue;
-  letter-spacing: 60px;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 50px;
-}
-.albumsHeader::after {
-  content: " ";
-  margin-left: -60px;
-}
-
-.banner {
-  height: 450px;
-  overflow: hidden;
-  position: relative;
-}
-
 .banner .disc-container {
-  width: 250px;
-  height: 250px;
+  width: 370px;
+  height: 370px;
   position: absolute;
-  bottom: 150px;
+  bottom: 120px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -252,22 +154,19 @@
 }
 .banner .disc-container .disc {
   background: url(../assets/album.jpg), url(../assets/disc_concept.png);
-  background-size: auto 100%;
-  width: 250px;
+  background-size: contain;
+  width: 370px;
   aspect-ratio: 1/1;
   background-blend-mode: multiply;
   mask-image: url(../assets/disc_concept.png);
   animation: rotateDisc 2s ease;
-  
 }
 .banner .disc-container:hover {
   transform: translateX(-50%) translateY(-20%);
 }
 
 .banner .disc-container:hover .disc {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
+  animation: rotateDisc 2s linear infinite;
 }
 @keyframes rotateDisc {
   0% {
@@ -277,35 +176,9 @@
     transform: rotate(360deg);
   }
 }
-
-.banner .vinyl-player {
-  position: absolute;
-  inset: 0 0 0 0;
-  pointer-events: none;
-  filter: drop-shadow(0px 0px 10px #f8a8c5);
-}
-.banner .vinyl-player img {
-  position: absolute;
-  transition: 0.7s;
-  height: 300px;
-  width: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -80px;
-}
-.banner:has(.disc-container:hover) .vinyl-player img {
+.banner:has(.disc-container:hover) .platform-circle img {
   transform: translateX(-50%) translateY(50px);
 }
-
-.disc-small {
-  border-radius: 100px;
-  aspect-ratio: 1/1;
-  width: 150px;
-  background-size: contain;
-  mask-image: url(../assets/disc_concept_small.png);
-  filter: drop-shadow(0px 0px 150px #f8a8c5);
-}
-
 /*************************************/
 /************LAST CAROUSEL************/
 /*************************************/
@@ -329,4 +202,48 @@
   background-position: 50% 70%;
   filter: blur(5px);
   z-index: -1;
+}
+
+/****RESPONSIVE*******/
+@media (max-width: 576px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+  .banner {
+    height: 320px;
+    width: 315px;
+  }
+  .banner .lightstick-container {
+    width: 105px;
+    height: 250px;
+    top: 35px;
+  }
+  .banner .platform-circle img {
+    height: 100px;
+    width: 250px;
+    top: 260px;
+    z-index: 0;
+  }
+  .banner .photoCard-container {
+    width: 150px;
+    height: 250px;
+    top: 35px;
+  }
+  .card-container {
+    width: 150px;
+    height: 250px;
+  }
+  .banner .disc-container {
+    width: 200px;
+    height: 200px;
+    bottom: 40px;
+  }
+  .banner .disc-container .disc {
+    background: url(../assets/album.jpg), url(../assets/disc_concept_small.png);
+    background-size: contain;
+    width: 200px;
+    aspect-ratio: 1/1;
+    mask-image: url(../assets/disc_concept_small.png);
+  }
 }

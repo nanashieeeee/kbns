@@ -4,7 +4,7 @@ import "../css/HeroCSS.css"
 
 function Hero() {
   return (
-    <div className="container mt-5 py-5">
+    <div className="container py-5 heroContainer d-flex justify-content-center align-items-center" style={{height:'100vh'}}>
       <div className="row">
         <div className="col-12 col-md-6 heroStatements" style={{ color: "#F2EAFF" }}>
           <div className="hero-container">
