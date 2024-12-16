@@ -1,7 +1,7 @@
 import React from "react";
 function ProductDesc(props) {
   return (
-    <div className="col-12 col-md-6 d-flex flex-column justify-content-center gap-3" style={{zIndex:"2"}}>
+    <div className="col-12 col-lg-6 d-flex flex-column justify-content-center gap-3" style={{zIndex:"2"}}>
       <h1 className="fw-bold display-1">{props.h1}</h1>
       <h2 className="fw-bold" style={{ color: "#B181FF" }}>
         {props.h2}

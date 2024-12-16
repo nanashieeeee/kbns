@@ -9,18 +9,18 @@ import images from "./Images";
 function Carousel() {
   return (
     <div
-      className="carouselContainer container-fluid"
-      style={{ height: "100vh" }}
+      className="carouselContainer container-fluid py-5"
+      style={{ minHeight: "100vh"}}
     >
       <div
         className="carousel slide"
         data-bs-ride="carousel"
         id="productCarousel"
-        style={{ height: "100%" }}
+        style={{ minHeight: "100vh" }}
       >
         <div
           className="carousel-inner d-flex align-items-center"
-          style={{ height: "100%" }}
+          style={{ minHeight: "100vh" }}
         >
           <Product identifier="lightstickProduct" active={true}>
             <ProductItem
