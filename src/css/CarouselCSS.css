@@ -208,7 +208,8 @@
 @media (max-width: 768px) {
   .carousel-control-prev,
   .carousel-control-next {
-    display: none;
+    /* display: none; */
+    width: 15px;
   }
   .banner {
     height: 320px;

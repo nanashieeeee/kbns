@@ -4,7 +4,7 @@
 }
 
 .heroTitle {
-  font-size: 96px;
+  font-size: 5.5rem;
   background-image: linear-gradient(#F3EBFF 24%, #B181FF 69%);
   -webkit-background-clip: text;
   color: transparent;
@@ -12,7 +12,7 @@
   z-index: 2;
 }
 .heroTitleShadow {
-  font-size: 96px;
+  font-size: 5.5rem;
   color: black;
   text-shadow: 5px 6px 10px rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -26,7 +26,7 @@
   font-size: 20px;
   background: linear-gradient(45deg, #6D33B4,#D891EF,#9CC9DD);
   background-size: 300% 300%;
-  animation: animateHeroBtn 7s ease-in-out infinite;
+  animation: animateHeroBtn 3s ease-in-out infinite;
   color: #FFFFFF;
   border: none;
   box-shadow: 2px 3px 5px black;
@@ -111,12 +111,16 @@
   animation-fill-mode: forwards;
 }
 
-@media(max-width: 576px){
+.heroSubStatement h6{
+  font-size: 20px;
+}
+
+@media(max-width: 768px){
   .heroTitle {
-    font-size: 72px;
+    font-size: 3rem;
   }
   .heroTitleShadow {
-    font-size: 72px;
+    font-size: 3rem;
   }
   .heroStatements{
     padding: 25px ;
@@ -129,5 +133,11 @@
   }
   .heroStatementFooter p{
     font-size: 14px;
+  }
+  .heroSubStatement h1{
+    font-size: 1.5rem;
+  }
+  .heroSubStatement h6{
+    font-size: 16px;
   }
 }

@@ -1,18 +1,39 @@
-*{
+* {
   font-family: "Istok Web", sans-serif;
 }
 
-html{
+html {
+  background: linear-gradient(to top, #d891ef, #660066);
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
 }
-section{
+section {
   scroll-snap-align: start;
 }
- #heroSection{
-  background: linear-gradient(to top, #D891EF,#660066);
- }
+#heroSection {
+  background: linear-gradient(to top, #d891ef, #660066);
+}
 
- #productSect{
-  background: linear-gradient(to top, #1E1E1E,#454545);
- }
+#productSect {
+  background: linear-gradient(to top, #1e1e1e, #454545);
+}
+
+@media (max-width: 768px) {
+  #heroSection {
+    background: linear-gradient(45deg, #660066, #d891ef, #6D33B4);
+    background-size: 700% 700%;
+    animation: gradientBg 7s ease-in-out infinite;
+  }
+}
+
+@keyframes gradientBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
